@@ -1,5 +1,6 @@
 export default function Filterbar() {
   return (
+    
     <div className="flex flex-col gap-4 bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
       <div className="flex items-center gap-2">
         <h2 className="text-base sm:text-lg font-bold">Analytics Overview</h2>
