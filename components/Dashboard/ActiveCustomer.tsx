@@ -2,7 +2,7 @@ interface ActiveCustomerProps {
   name: string;
   usertype: string;
   avatar: string;
-  value: number;
+  value: string;
 }
 export default function ActiveCustomers({ name, usertype ,avatar ,value}: ActiveCustomerProps) {
     return (
