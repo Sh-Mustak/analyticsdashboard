@@ -30,9 +30,9 @@ export default function DashboardBottomSection() {
           </button>
         </div>
         <div className="space-y-3 sm:space-y-4">
-          <ActiveCustomers name="Shahriar Mustak" usertype="Premium" avatar="/man-user-color-icon.svg" />
-          <ActiveCustomers name="Tuba Islam" usertype="Enterprise" avatar="/business-women-icon.svg" />
-          <ActiveCustomers name="Riad Hasan" usertype="Premium" avatar="/man-user-color-icon.svg" />
+          <ActiveCustomers name="Shahriar Mustak" usertype="Premium" avatar="/man-user-color-icon.svg" value="$1,240" />
+          <ActiveCustomers name="Tuba Islam" usertype="Enterprise" avatar="/business-women-icon.svg" value="$2,500" />
+          <ActiveCustomers name="Riad Hasan" usertype="Premium" avatar="/man-user-color-icon.svg" value="$980" />
         
         </div>
       </div>

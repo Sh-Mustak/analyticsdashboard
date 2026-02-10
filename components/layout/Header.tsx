@@ -38,7 +38,7 @@ export default function Header() {
 
         <div className="hidden md:flex items-center gap-3">
           <div className="text-right">
-            <p className="text-sm font-semibold leading-none">Alex Rivera</p>
+            <p className="text-sm font-semibold leading-none">Shahriar Mustak</p>
             <p className="text-[11px] text-slate-500 dark:text-slate-400 mt-1">
               Super Admin
             </p>
@@ -47,7 +47,7 @@ export default function Header() {
             alt="Profile"
             className="w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700"
             data-alt="Headshot of a male professional avatar"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYUuQ3I8KL9rFlf8S5fLlHf6KmaArUCaXf8KtdP_tUIf48LH7ZxPDZfPrPauCDIAPwxsCnCh1uSFfzjKviBwTuvl0IycckvhE35p6KoujRyFIbJTCZxdrWPnKvE6TauhJ-mO8wl8UBMkk9SZx98nOI6nFrfa-HXC9Uxn2PwnzkPtUOVjHm8Fb-BEEHqYQTwuiiUfqZnXQuHW0zvPQY1B65klfPLB4_LDpmOiJL3XEJvo29FQHxpRjnqTfBl2PWi-xvn_htpaoxPuQ"
+            src="/man-user-color-icon.svg"
           />
         </div>
 
@@ -56,7 +56,7 @@ export default function Header() {
           alt="Profile"
           className="md:hidden w-9 h-9 rounded-full border border-slate-200 dark:border-slate-700"
           data-alt="Headshot of a male professional avatar"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYUuQ3I8KL9rFlf8S5fLlHf6KmaArUCaXf8KtdP_tUIf48LH7ZxPDZfPrPauCDIAPwxsCnCh1uSFfzjKviBwTuvl0IycckvhE35p6KoujRyFIbJTCZxdrWPnKvE6TauhJ-mO8wl8UBMkk9SZx98nOI6nFrfa-HXC9Uxn2PwnzkPtUOVjHm8Fb-BEEHqYQTwuiiUfqZnXQuHW0zvPQY1B65klfPLB4_LDpmOiJL3XEJvo29FQHxpRjnqTfBl2PWi-xvn_htpaoxPuQ"
+          src="/man-user-color-icon.svg"
         />
       </div>
     </header>

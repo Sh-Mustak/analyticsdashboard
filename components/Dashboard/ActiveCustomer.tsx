@@ -1,4 +1,10 @@
-export default function ActiveCustomers({ name, usertype ,avatar}) {
+interface ActiveCustomerProps {
+  name: string;
+  usertype: string;
+  avatar: string;
+  value: number;
+}
+export default function ActiveCustomers({ name, usertype ,avatar ,value}: ActiveCustomerProps) {
     return (
         <div className="flex items-center justify-between p-2 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-lg transition-colors">
             <div className="flex items-center gap-2 sm:gap-3 min-w-0">
@@ -21,7 +27,7 @@ export default function ActiveCustomers({ name, usertype ,avatar}) {
               </div>
             </div>
             <div className="text-right flex-shrink-0 ml-2">
-              <p className="text-sm font-bold">$1,240</p>
+              <p className="text-sm font-bold">{value}</p>
               <span className="text-[10px] font-bold bg-primary/10 text-primary px-2 py-0.5 rounded whitespace-nowrap">
                 {usertype}
               </span>
