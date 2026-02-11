@@ -18,7 +18,7 @@ export default function Sidebar({isSidebarOpen, setIsSidebarOpen }: { isSidebarO
         onClick={handleSidebarToggle}
         className="lg:hidden absolute top-4 right-4 w-8 h-8 flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-600 dark:text-slate-400"
       >
-        <span className="material-symbols-outlined">close</span>
+        <span className="material-symbols-outlined bg-primary p-1.5 text-white rounded-lg mt-4">arrow_back</span>
       </button>
 
       {/* Logo */}
