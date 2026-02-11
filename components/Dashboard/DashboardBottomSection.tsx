@@ -1,7 +1,6 @@
 import OrdersBarChart from "../Charts/OrdersBarChart";
 import ActiveCustomers from "./ActiveCustomer";
 
-
 export default function DashboardBottomSection() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
@@ -30,10 +29,27 @@ export default function DashboardBottomSection() {
           </button>
         </div>
         <div className="space-y-3 sm:space-y-4">
-          <ActiveCustomers name="Shahriar Mustak" usertype="Premium" avatar="/man-user-color-icon.svg" value="$1,240" alt="Shahriar Mustak's profile picture" />
-          <ActiveCustomers name="Tuba Islam" usertype="Enterprise" avatar="/business-women-icon.svg" value="$2,500" alt="Tuba Islam's profile picture" />
-          <ActiveCustomers name="Riad Hasan" usertype="Premium" avatar="/man-user-color-icon.svg" value="$980" alt="Riad Hasan's profile picture" />
-        
+          <ActiveCustomers
+            name="Shahriar Mustak"
+            usertype="Premium"
+            avatar="/man-user-color-icon.svg"
+            value="$1,240"
+            alt="Shahriar Mustak's profile picture"
+          />
+          <ActiveCustomers
+            name="Mohona Islam"
+            usertype="Enterprise"
+            avatar="/business-women-icon.svg"
+            value="$2,500"
+            alt="Mohona Islam's profile picture"
+          />
+          <ActiveCustomers
+            name="Riad Hasan"
+            usertype="Premium"
+            avatar="/man-user-color-icon.svg"
+            value="$980"
+            alt="Riad Hasan's profile picture"
+          />
         </div>
       </div>
     </div>
