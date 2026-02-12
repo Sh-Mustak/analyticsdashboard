@@ -59,8 +59,8 @@ const options = {
 };
 
 export default function RevenueLineChart() {
-  const { data} = useDashboardStore();
-  console.log("Dashboard Store Data:", data);
+  const { data} = useDashboardStore((state) => state.data);
+  // console.log("Dashboard Store Data:", data);
   let revenueData;
   if (data) {
     revenueData = {
@@ -78,7 +78,7 @@ export default function RevenueLineChart() {
   } else {
     revenueData = hardCodedData;
   }
-  console.log("Revenue Line Chart Data:", revenueData.data, revenueData.labels);
+  // console.log("Revenue Line Chart Data:", revenueData.data, revenueData.labels);
   return (
     <div className="absolute inset-0">
       <Line data={revenueData} options={options} />
