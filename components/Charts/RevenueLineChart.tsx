@@ -62,7 +62,7 @@ export default function RevenueLineChart() {
   const { data} = useDashboardStore();
   console.log("Dashboard Store Data:", data);
   let revenueData;
-  if (data && data.revenue) {
+  if (data) {
     revenueData = {
       labels: data.revenue.labels,
       datasets: [
