@@ -59,7 +59,7 @@ const options = {
 };
 
 export default function RevenueLineChart() {
-  const { data} = useDashboardStore((state) => state.data);
+  const data = useDashboardStore((state) => state.data);
   // console.log("Dashboard Store Data:", data);
   let revenueData;
   if (data) {
