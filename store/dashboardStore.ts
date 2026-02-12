@@ -1,10 +1,9 @@
-"use client";
-
+import { DashboardResponse } from "@/types/dashboard";
 import { create } from "zustand";
-import api from "../lib/axios.ts";
+import api from "../lib/axios";
 
 interface DashboardState {
-  data: unknown;
+  data: DashboardResponse | null;
   loading: boolean;
   error: string | null;
   fetchDashboard: () => Promise<void>;
@@ -19,13 +18,13 @@ export const useDashboardStore = create<DashboardState>((set) => ({
     try {
       set({ loading: true, error: null });
 
-      const res = await api.get("/dashboard");
+      const res = await api.get<DashboardResponse>("/dashboard");
 
       set({
         data: res.data,
         loading: false,
       });
-    } catch (error) {
+    } catch {
       set({
         error: "Failed to fetch dashboard data",
         loading: false,
