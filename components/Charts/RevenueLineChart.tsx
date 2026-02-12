@@ -1,9 +1,10 @@
 "use client";
 
+import { useDashboardStore } from "@/store/dashboardStore";
 import { Line } from "react-chartjs-2";
 import "../../lib/Chart.ts";
 
-const data = {
+const hardCodedData = {
   labels: [
     "Jan",
     "Feb",
@@ -39,7 +40,7 @@ const options = {
   },
   scales: {
     x: {
-      grid: { display: false }, 
+      grid: { display: false },
       border: { display: false },
       ticks: {
         color: "#94a3b8",
@@ -47,7 +48,7 @@ const options = {
       },
     },
     y: {
-      grid: { display: false }, 
+      grid: { display: false },
       border: { display: false },
       ticks: {
         color: "#94a3b8",
@@ -58,9 +59,29 @@ const options = {
 };
 
 export default function RevenueLineChart() {
+  const { data} = useDashboardStore();
+  console.log("Dashboard Store Data:", data);
+  let revenueData;
+  if (data && data.revenue) {
+    revenueData = {
+      labels: data.revenue.labels,
+      datasets: [
+        {
+          label: "Revenue",
+          data: data.revenue.data,
+          borderColor: "#3b82f6",
+          backgroundColor: "#256af4",
+          tension: 0.4,
+        },
+      ],
+    };
+  } else {
+    revenueData = hardCodedData;
+  }
+  console.log("Revenue Line Chart Data:", revenueData.data, revenueData.labels);
   return (
     <div className="absolute inset-0">
-      <Line data={data} options={options} />
+      <Line data={revenueData} options={options} />
     </div>
   );
 }
