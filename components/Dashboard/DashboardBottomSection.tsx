@@ -2,7 +2,6 @@ import { useDashboardStore } from "@/store/dashboardStore";
 import OrdersBarChart from "../Charts/OrdersBarChart";
 import ActiveCustomers from "./ActiveCustomer";
 
-
 export default function DashboardBottomSection() {
   const data = useDashboardStore((state) => state.data);
   const loading = useDashboardStore((state) => state.loading);
@@ -36,19 +35,23 @@ export default function DashboardBottomSection() {
           </button>
         </div>
         <div className="space-y-3 sm:space-y-4">
-          {loading && <p className="text-sm text-slate-500 dark:text-slate-400">Loading...</p>}
+          {loading && (
+            <p className="text-sm text-slate-500 dark:text-slate-400">
+              Loading...
+            </p>
+          )}
           {error && <p className="text-sm text-red-500">{error}</p>}
-          {data && data.customers.map((customer) => (
-            <ActiveCustomers
-            key={customer.id}
-            name={customer.name}
-            usertype={customer.type}
-            avatar={customer.avatar}
-            value={customer.value}
-            alt={`${customer.name}'s profile picture`}
-          />
-          ))}
-          
+          {data &&
+            data.customers.map((customer) => (
+              <ActiveCustomers
+                key={customer.id}
+                name={customer.name}
+                usertype={customer.type}
+                avatar={customer.avatar}
+                value={customer.value}
+                alt={`${customer.name}'s profile picture`}
+              />
+            ))}
         </div>
       </div>
     </div>

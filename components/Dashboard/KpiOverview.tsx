@@ -1,24 +1,42 @@
 import { useDashboardStore } from "@/store/dashboardStore";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import KpiCardSkeleton from "../skeletons/KpiCardSkeleton";
 import KpiCard from "./kpiCard";
 
 export default function KpiOverview() {
   const { data, loading, error, fetchDashboard } = useDashboardStore();
 
+  const [showSkeleton, setShowSkeleton] = useState(true);
+
   useEffect(() => {
     fetchDashboard();
+
+    const timer = setTimeout(() => {
+      setShowSkeleton(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
   }, [fetchDashboard]);
 
-  if (loading) {
-    return <div>Loading...</div>;
+  
+  if (loading || showSkeleton) {
+    return (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        {Array.from({ length: 4 }).map((_, i) => (
+          <KpiCardSkeleton key={i} />
+        ))}
+      </div>
+    );
   }
 
   if (error) {
     return <div>Error: {error}</div>;
   }
+
   if (!data) return null;
 
   const { activeUsers, totalRevenue, totalOrders, conversionRate } = data.kpis;
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
       <KpiCard

@@ -11,7 +11,7 @@ const defaultData = {
       label: "Orders",
       data: [120, 150, 180, 140, 200, 220, 210],
       backgroundColor: "#22c55e",
-      borderRadius: 6, // optional: smoother bars
+      borderRadius: 6,
     },
   ],
 };
@@ -43,7 +43,8 @@ const options = {
 
 export default function OrdersBarChart() {
   const data = useDashboardStore((state) => state.data);
-  console.log("Orders Data:", data); // Debugging log
+  // Debugging log
+  // console.log("Orders Data:", data);
   let chartData;
   if (data) {
     chartData = {
@@ -53,7 +54,7 @@ export default function OrdersBarChart() {
           label: "Orders",
           data: data.orders.data,
           backgroundColor: "#22c55e",
-          borderRadius: 6, // optional: smoother bars
+          borderRadius: 6,
         },
       ],
     };
