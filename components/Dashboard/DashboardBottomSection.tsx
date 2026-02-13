@@ -1,7 +1,14 @@
+import { useDashboardStore } from "@/store/dashboardStore";
 import OrdersBarChart from "../Charts/OrdersBarChart";
 import ActiveCustomers from "./ActiveCustomer";
 
+
 export default function DashboardBottomSection() {
+  const data = useDashboardStore((state) => state.data);
+  const loading = useDashboardStore((state) => state.loading);
+  const error = useDashboardStore((state) => state.error);
+
+  console.log("DashboardBottomSection Data:", data); // Debugging log
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
       {/* Weekly Orders Bar Chart */}
@@ -29,27 +36,19 @@ export default function DashboardBottomSection() {
           </button>
         </div>
         <div className="space-y-3 sm:space-y-4">
-          <ActiveCustomers
-            name="Shahriar Mustak"
-            usertype="Premium"
-            avatar="/man-user-color-icon.svg"
-            value="$1,240"
-            alt="Shahriar Mustak's profile picture"
+          {loading && <p className="text-sm text-slate-500 dark:text-slate-400">Loading...</p>}
+          {error && <p className="text-sm text-red-500">{error}</p>}
+          {data && data.customers.map((customer) => (
+            <ActiveCustomers
+            key={customer.id}
+            name={customer.name}
+            usertype={customer.type}
+            avatar={customer.avatar}
+            value={customer.value}
+            alt={`${customer.name}'s profile picture`}
           />
-          <ActiveCustomers
-            name="Mohona Islam"
-            usertype="Enterprise"
-            avatar="/business-women-icon.svg"
-            value="$2,500"
-            alt="Mohona Islam's profile picture"
-          />
-          <ActiveCustomers
-            name="Riad Hasan"
-            usertype="Premium"
-            avatar="/man-user-color-icon.svg"
-            value="$980"
-            alt="Riad Hasan's profile picture"
-          />
+          ))}
+          
         </div>
       </div>
     </div>
