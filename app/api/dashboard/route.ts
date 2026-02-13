@@ -10,8 +10,23 @@ export async function GET() {
     },
 
     revenue: {
-      labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-      data: [1200, 1900, 3000, 2500, 3200, 4000, 3800, 4200, 4600, 4800, 5000, 1400],
+      labels: [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec",
+      ],
+      data: [
+        1200, 1900, 3000, 2500, 3200, 4000, 3800, 4200, 4600, 4800, 5000, 1400,
+      ],
     },
 
     orders: {
